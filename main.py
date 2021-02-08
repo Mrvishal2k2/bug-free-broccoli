@@ -20,7 +20,7 @@ def main():
     with user_client:
         while True:
             print("[INFO] starting to check uptime..")
-            edit_text = f"💗 𝐎𝐮𝐫 𝐀𝐥𝐥 𝐁𝐨𝐭𝐬 𝐋𝐢𝐬𝐭 𝐚𝐧𝐝 𝐋𝐢𝐯𝐞 𝐒𝐭𝐚𝐭𝐮𝐬💖\n\n💡𝘉𝘰𝘵 𝘜𝘱𝘥𝘢𝘵𝘦𝘥 𝘌𝘷𝘦𝘳𝘺 15 𝘔𝘪𝘯𝘶𝘵𝘦𝘴\n\n"
+            edit_text = f"💗 𝐎𝐮𝐫 𝐀𝐥𝐥 𝐁𝐨𝐭𝐬 𝐋𝐢𝐬𝐭 & 𝐋𝐢𝐯𝐞 𝐒𝐭𝐚𝐭𝐮𝐬💖\n@BotDunia\n\n💡𝘉𝘰𝘵 𝘜𝘱𝘥𝘢𝘵𝘦𝘥 𝘌𝘷𝘦𝘳𝘺 15 𝘔𝘪𝘯𝘶𝘵𝘦𝘴\n\n"
             for bot in bots:
                 print(f"[INFO] checking @{bot}")
                 snt = user_client.send_message(bot, '/start')
@@ -31,8 +31,9 @@ def main():
                 if snt.message_id == msg.message_id:
                     print(f"[WARNING] @{bot} is down")
                     edit_text += f"**➩ @{bot}**    `❌`\n"
+                    t_now = datetime.datetime.now(pytz.timezone('Asia/Kolkata')).strftime("%d/%m/%y %I:%M:%S %p")
                     user_client.send_message(bot_owner,
-                                             f"@{bot} status: `Down`")
+                                             f"@{bot} status: `Down`\n{t_down}")
                 else:
                     print(f"[INFO] all good with @{bot}")
                     edit_text += f"**➩ @{bot}**    `✅`\n"
