@@ -33,7 +33,7 @@ def main():
                     edit_text += f"**➩ @{bot}**    `❌`\n"
                     t_now = datetime.datetime.now(pytz.timezone('Asia/Kolkata')).strftime("%d/%m/%y %I:%M:%S %p")
                     user_client.send_message(bot_owner,
-                                             f"@{bot} status: `Down`\n{t_down}")
+                                             f"@{bot} status: `Down`\n{t_now}")
                 else:
                     print(f"[INFO] all good with @{bot}")
                     edit_text += f"**➩ @{bot}**    `✅`\n"
